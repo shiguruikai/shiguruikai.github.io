@@ -1163,7 +1163,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.filteredHeaderNameOptions = Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["of"])();
         this.controls = {
           method: this.fb.control(_HttpMethod__WEBPACK_IMPORTED_MODULE_6__["httpMethods"][0], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-          url: this.fb.control('https://reqres.in/api/users/1', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+          url: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
           body: this.fb.control(''),
           headerFormArray: this.fb.array([])
         };
