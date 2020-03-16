@@ -1272,7 +1272,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               throw new Error("Unsupported HTTP method: ".concat(method));
             }
 
-            observe.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["timeout"])(5000), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.handleError)).subscribe(function (res) {
+            observe // TODO エラーハンドリングの方法を調べろ
+            // .pipe(timeout(5000), catchError(this.handleError))
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["timeout"])(5000)).subscribe(function (res) {
               _this2.response = res;
               _this2.successful = true;
               var blob = res.body;
@@ -1286,7 +1288,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   return _this2.responseBody = text;
                 });
               }
-            }).add(function () {
+            }, this.handleError).add(function () {
               return _this2.requesting = false;
             });
           } catch (e) {

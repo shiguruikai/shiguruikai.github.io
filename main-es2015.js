@@ -727,7 +727,9 @@ class RestClientComponent {
                 throw new Error(`Unsupported HTTP method: ${method}`);
             }
             observe
-                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["timeout"])(5000), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.handleError))
+                // TODO エラーハンドリングの方法を調べろ
+                // .pipe(timeout(5000), catchError(this.handleError))
+                .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["timeout"])(5000))
                 .subscribe((res) => {
                 this.response = res;
                 this.successful = true;
@@ -740,7 +742,7 @@ class RestClientComponent {
                     this.downloadUrl = this.sanitizer.bypassSecurityTrustResourceUrl(window.URL.createObjectURL(blob));
                     new Response(blob).text().then(text => (this.responseBody = text));
                 }
-            })
+            }, this.handleError)
                 .add(() => (this.requesting = false));
         }
         catch (e) {
