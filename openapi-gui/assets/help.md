@@ -2,16 +2,15 @@
 
 `OpenAPI-GUI`は、YAML形式のOpenAPIドキュメントをGUIで編集できるアプリです。
 
-## ツールバー
+## ツールバーのボタン
 
 ### <span class="material-icons">save</span> Save as file
 現在の内容をファイルに保存します。
 
 ### <span class="material-icons">sort</span> Sort properties
 プロパティの並び替えを行います。<br>
-並び順は作者の好み。（並び順は今後変更する可能性あり）
-
-特に、下記のプロパティは、プロパティの名前(key)の昇順で並び替えられます。
+プロパティの並び順は、デフォルトのJSON Schemaで定義されている順番をベースに、作成の好みで調整した順番です。（並び順は今後変更する可能性あり）<br>
+特に、下記のオブジェクトのプロパティは、プロパティの名前(キー)の昇順に並び替えます。
 
 - OpenAPI Object
   - paths
@@ -27,12 +26,12 @@
   - schemas
   - headers
   - parameters
-  - responses
   - requestBodies
+  - responses
   - securitySchemes
-  - links
   - examples
-
+  - links
+  - callbacks
 
 ### <span class="material-icons">cleaning_services</span> Clean properties
 不要なプロパティを削除します。<br>
