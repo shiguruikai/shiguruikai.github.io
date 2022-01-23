@@ -58,9 +58,16 @@ tagsとその内容を編集できます。
 #### 機能
 - タグの追加
 - タグの削除
-- タグの名前順に並び替え
-- タグの手動並び替え
-- タグのプロパティの編集(name, description)
+- タグを手動並び替え
+- タグを名前順に並び替え
+- タグのプロパティの編集
+- タグの名前を変更したとき、Operationにセットされているタグの名前も自動的に変更する。
+
+### <span class="material-icons">folder</span> Paths
+pathsのPathItemを編集できます。
+
+### <span class="material-icons">folder</span> Tagged Operations
+Operationをタグごとに表示します。
 
 ### Components
 配下のフォルダメニューを選択すると、作成済みのアイテムのメニューを展開します。<br>
