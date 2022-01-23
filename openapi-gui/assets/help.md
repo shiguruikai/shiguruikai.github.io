@@ -64,7 +64,8 @@ tagsとその内容を編集できます。
 - タグの名前を変更したとき、Operationにセットされているタグの名前も自動的に変更する。
 
 ### <span class="material-icons">folder</span> Paths
-pathsのPathItemを編集できます。
+pathsのPathItemを編集できます。<br>
+フォルダメニューでは、右クリックのメニューから、アイテムの追加、コピー、削除が行えます。
 
 ### <span class="material-icons">folder</span> Tagged Operations
 Operationをタグごとに表示します。
