@@ -1,0 +1,80 @@
+openapi: 3.0.2
+info:
+  title: サンプル
+  description: 説明
+  version: 1.0.0
+tags:
+  - name: user
+    description: ユーザー
+paths:
+  /users:
+    get:
+      tags:
+        - user
+      operationId: getUsers
+      summary: ユーザー情報を返す。
+      responses:
+        '200':
+          description: OK
+          content: {}
+    post:
+      tags:
+        - user
+      responses:
+        '200':
+          description: ''
+          content: {}
+  /users/{userId}:
+    get:
+      tags:
+        - user
+      operationId: getUser
+      summary: 対象ユーザーの情報を返す。
+      responses:
+        '200':
+          description: 対象ユーザーの情報を返す。
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        '404':
+          $ref: '#/components/responses/404'
+components:
+  schemas:
+    createdDate:
+      type: string
+      format: date-time
+      description: 作成日時
+      example: '2023-01-01T00:00:00'
+    userId:
+      type: string
+      description: ユーザーID
+      example: user01
+    userName:
+      type: string
+      description: ユーザー名
+      example: ユーザー名
+    UserResponse:
+      type: object
+      description: ユーザーレスポンス
+      required:
+        - userId
+        - userName
+        - createdDate
+      properties:
+        userId:
+          $ref: '#/components/schemas/userId'
+        userName:
+          $ref: '#/components/schemas/userName'
+        createdDate:
+          $ref: '#/components/schemas/createdDate'
+  parameters:
+    path.userId:
+      name: userId
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/userId'
+  responses:
+    '404':
+      description: 対象が存在しない場に返す。
