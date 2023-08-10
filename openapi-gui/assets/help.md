@@ -15,13 +15,16 @@
 下記プロパティは、プロパティの名前(キー)の昇順で並び替えます。
 
 - OpenAPI Object
+
   - paths
 
 - Response Object
+
   - content
   - links
 
 - Operation Object
+
   - responses
 
 - Components Object
